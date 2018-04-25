@@ -1,6 +1,4 @@
-/**
- * Created by kanvi on 4/22/2018.
- */
+
 import com.google.gson.GsonBuilder;
 import sun.plugin2.message.Message;
 
@@ -73,7 +71,7 @@ public class AlgorithmsAndSignature {
         return Base64.getEncoder().encodeToString(key.getEncoded());
     }
 
-    //Tacks in array of transactions and returns a merkle root.
+    //Tracks in array of transactions and returns a merkle root.
     public static String getMerkleRoot(ArrayList<Transaction> transactions) {
         int count = transactions.size();
         ArrayList<String> previousTreeLayer = new ArrayList<String>();

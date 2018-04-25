@@ -1,8 +1,5 @@
 import java.security.PublicKey;
 
-/**
- * Created by kanvi on 4/22/2018.
- */
 public class TransactionOutput {
 
     public String id;

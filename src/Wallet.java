@@ -13,12 +13,15 @@ public class Wallet {
     public PrivateKey privateKey;
     // used to verify signature
     public PublicKey publicKey;
+    // unspent transcations
     public HashMap<String,TransactionOutput> UTXOs = new HashMap<String,TransactionOutput>();
 
+    //generates public-private Key Pair
     public Wallet(){
         generateKeyPair();
     }
-// Elliptical curve key-pair
+
+    // / Elliptical curve key-pair
     public void generateKeyPair(){
         try{
             KeyPairGenerator keyGenerator =  KeyPairGenerator.getInstance("ECDSA","BC");
@@ -51,7 +54,7 @@ public class Wallet {
     //Generates and returns a new transaction from this wallet.
     public Transaction sendFunds(PublicKey _recipient,float value ) {
         if(getBalance() < value) { //gather balance and check funds.
-            System.out.println("#Not Enough funds to send transaction. Transaction Discarded.");
+            System.out.println("Fund is not sufficient so transaction discarded.");
             return null;
         }
         //create array list of inputs

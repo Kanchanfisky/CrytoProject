@@ -1,9 +1,6 @@
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.util.ArrayList;
-/**
- * Created by kanvi on 4/22/2018.
- */
 
 /**
  * Signatures are verified by miners as a new transaction
@@ -79,11 +76,10 @@ public class Transaction {
             transInput.UTXO = OurCryptoChain.UTXOs.get(transInput.transOutputId);
         }
 
-        // check if transaction is valid
-        // - what makes transaction valid ? --
-//check if transaction is valid:
+
+//check if transaction is valid. In this case, we defined a minimumTransaction for verification
         if(getInputsValue() < OurCryptoChain.minimumTransaction) {
-            System.out.println("#Transaction Inputs to small: " + getInputsValue());
+            System.out.println("#Transaction Inputs too small: " + getInputsValue());
             return false;
         }
 

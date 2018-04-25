@@ -1,6 +1,3 @@
-/**
- * Created by kanvi on 4/22/2018.
- */
 
 /**
  * This class will be used to reference TransactionOutputs that have not yet been spent.
